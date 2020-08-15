@@ -1,9 +1,4 @@
 //
-//  main.cpp
-//  cpp-exploration
-//
-//  Created by Simon St. on 15/8/20.
-//  Copyright © 2020 Simon St. All rights reserved.
 //
 
 #include <iostream>
