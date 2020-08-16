@@ -20,16 +20,28 @@ void printStudent(string info, int age)
     cout << info << " " << age << endl;
 }
 
+double cube(double num){
+    double result = num;
+    for (int i = 0; i <= 1; i++) {
+        result = result * num;
+    }
+    
+    return result;
+}
+
 int main()
 {
-    char grade = 'A';
-    int age = 29;
-    double gpa = 4.5;
-    bool isEnrolled = true;
-    string sInfo = "Student Information";
+    string word;
     
-    printStudent(sInfo, age);
-    reverseString("hello");
+    cout << "Enter a word: ";
+    getline(cin, word);
+    string reversed = reverseString(word);
+    cout << reversed << endl;
+    
+    int ranNum[] = {4, 5, 6, 8, 16, 32, 40};
+     cout << ranNum[0] << endl;
+    
+    cout << cube(3) << endl;
     
     return 0;
 }

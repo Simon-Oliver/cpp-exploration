@@ -19,6 +19,5 @@ string reverseString (string phrase )
     for (int i = phrase.length(); i >= 0; i--) {
         newStr += phrase[i];
     }
-     cout << newStr << endl;
   return newStr ;
 }
