@@ -33,6 +33,13 @@ int main()
     cout << movie1.getRating() << endl;
     cout << movie2.getRating() << endl;
     
+    Chef chef1;
+    chef1.makeSalad();
+    
+    ItalianChef chef2;
+    chef2.makePasta();
+    chef2.makeSalad();
+    
     cout << student1.hasHonors() << endl;
     
     cout << book1.title << endl;
@@ -50,6 +57,10 @@ int main()
     cout << power(9, 2) << endl;
     
     int dayNum;
+    
+    
+    string& ref = word;
+    cout << "Ref ---> "<< ref << "Mem Address: " << &ref << "Mem Address " << &word << endl;
     
     cout << "Enter a day number: ";
     cin >> dayNum;

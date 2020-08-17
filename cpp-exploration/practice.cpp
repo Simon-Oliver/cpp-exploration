@@ -85,3 +85,19 @@ void Movie::setRating(string aRatingAge){
 string Movie::getRating(){
     return ratingAge;
 }
+
+void Chef::makeSalad(){
+    cout << "Chef is making salad" << endl;
+}
+
+void Chef::makeChicken(){
+    cout << "Chef makes chicken" << endl;
+}
+
+void ItalianChef::makePasta(){
+    cout << "Chef makes pasta" << endl;
+}
+
+void ItalianChef::makePizza(){
+    cout << "Chef makes pizza" << endl;
+}

@@ -49,4 +49,18 @@ class Movie{
         string getRating();
 };
 
+
+class Chef{
+    public:
+    void makeSalad();
+    void makeChicken();
+};
+
+class ItalianChef : public Chef{
+    public:
+        void makePasta();
+        void makePizza();
+};
+
+
 #endif /* practice_hpp */
