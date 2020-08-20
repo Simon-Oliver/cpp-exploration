@@ -22,10 +22,12 @@ int main(int argc, char** argv)
 {
     
     if(argc != 1){
-        cout << "You entered " << argc << " arguments\n"
+        cout << "You entered " << argc << " arguments\n";
     }
     
-    for(int 0 )
+    for(int i = 0; i < argc; i++ ){
+        cout << argv[i] << endl;
+    };
 //    string word;
 //
 //    // & in front of variables returns memory address
