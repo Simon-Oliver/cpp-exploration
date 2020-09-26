@@ -18,16 +18,29 @@ using namespace std;
 
 
 
-int main(int argc, char** argv)
+int main()
 {
+    int A[5] = {1,2,3,55,99};
     
-    if(argc != 1){
-        cout << "You entered " << argc << " arguments\n";
+    for(int i = 0; i < 5 ; i++){
+        printf("%d\n", A[i]);
     }
     
-    for(int i = 0; i < argc; i++ ){
-        cout << argv[i] << endl;
-    };
+    int num = 5;
+    int *p = &num;
+    
+    cout << *p <<endl;
+    
+    
+//    if(argc != 1){
+//        cout << "You entered " << argc << " arguments\n";
+//    }
+//
+//    for(int i = 0; i < argc; i++ ){
+//        cout << argv[i] << endl;
+//    };
+    
+    
 //    string word;
 //
 //    // & in front of variables returns memory address
