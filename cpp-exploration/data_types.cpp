@@ -28,9 +28,12 @@ int main()
     
     int num = 5;
     int *p = &num;
+    int test = 0b0000001;
     
-    cout << *p <<endl;
+    cout << test <<endl;
     
+    
+
     
 //    if(argc != 1){
 //        cout << "You entered " << argc << " arguments\n";
