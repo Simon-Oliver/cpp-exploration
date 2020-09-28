@@ -20,17 +20,20 @@ using namespace std;
 
 int main()
 {
-    int A[5] = {1,2,3,55,99};
     
-    for(int i = 0; i < 5 ; i++){
-        printf("%d\n", A[i]);
-    }
     
-    int num = 5;
-    int *p = &num;
-    int test = 0b0000001;
     
-    cout << test <<endl;
+//    int A[5] = {1,2,3,55,99};
+//
+//    for(int i = 0; i < 5 ; i++){
+//        printf("%d\n", A[i]);
+//    }
+//
+//    int num = 5;
+//    int *p = &num;
+//    int test = 0b0000001;
+//
+//    cout << test <<endl;
     
     
 
