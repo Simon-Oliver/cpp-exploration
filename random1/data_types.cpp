@@ -16,10 +16,34 @@
 
 using namespace std;
 
+class Player
+{
+private:
+    string name;
+    int health = 100;
+    int attack[3] = {10, 20, 30};
+    bool start = true;
+    
+public:
+  
+    Player(string n){
+        name = n;
+    }
+    
+    int do_damge(){
+        return 1;
+    }
+   
 
-
+    
+    
+   
+    
+    
+};
 int main()
 {
+    Player player1("simon");
     
     
     

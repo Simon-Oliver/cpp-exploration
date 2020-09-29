@@ -11,10 +11,26 @@
 
 int main()
 {
-    std::cout << "Enter two numbers:" << std::endl;
-    int v1 = 0, v2 = 0;
-    std::cin >> v1 >> v2;
-    std::cout << "v1 is " << v1 << " v2 is " << v2 << std::endl;
+
+    int currVal = 0;
+    int val = 0;
+    
+    if(std::cin >> currVal){
+        int count = 1;
+        
+        while(std::cin >> val){
+            if(val == currVal){
+                ++count;
+            }
+            else {
+                std::cout << currVal << " " << count << std::endl;
+                currVal = val;
+                count = 1;
+            }
+        }
+        std::cout << currVal << " " << count << std::endl;
+        std::cout << "Done !" << std::endl;
+    }
     
     return 0;
 }
