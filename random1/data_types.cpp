@@ -33,7 +33,20 @@ public:
     int do_damge(){
         return 1;
     }
-   
+    
+    void take_damage(int damage)
+    {
+        if(health - damage >= 0){
+            health -= damage;
+        } else {
+            health = 0;
+        }
+    }
+    
+    int get_health()
+    {
+        return health;
+    }
 
     
     
@@ -44,6 +57,14 @@ public:
 int main()
 {
     Player player1("simon");
+    string test = "";
+    std::cout << "Enter your test string: ";
+    std::cin >> test;
+    std::cout << test << std::endl;
+    
+    std::cout << player1.get_health() << std::endl;
+    player1.take_damage(40);
+    std::cout << player1.get_health() << std::endl;
     
     
     
