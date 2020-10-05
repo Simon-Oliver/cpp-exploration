@@ -16,13 +16,15 @@
 
 using namespace std;
 
+bool game_over = false;
+
 class Player
 {
 private:
     string name;
     int health = 100;
-    int attack[3] = {10, 20, 30};
-    bool start = true;
+    int stamnia = 130;
+    int attack[3][2] = {{10,5}, {20,10}, {30,20}};
     
 public:
   
@@ -30,9 +32,11 @@ public:
         name = n;
     }
     
-    int do_damge(){
-        return 1;
+    int do_damge(int select){
+        stamnia -= attack[select][1];
+        return attack[select][0];
     }
+    
     
     void take_damage(int damage)
     {
@@ -47,6 +51,11 @@ public:
     {
         return health;
     }
+    
+    int get_stamnia()
+    {
+        return stamnia;
+    }
 
     
     
@@ -56,15 +65,31 @@ public:
 };
 int main()
 {
-    Player player1("simon");
-    string test = "";
-    std::cout << "Enter your test string: ";
-    std::cin >> test;
-    std::cout << test << std::endl;
+    string name = "";
+    std::cout << "Enter your Player name: ";
+    std::cin >> name;
     
-    std::cout << player1.get_health() << std::endl;
-    player1.take_damage(40);
-    std::cout << player1.get_health() << std::endl;
+    Player player1(name);
+   
+    while(!game_over){
+        int atk = 0;
+        std::cout << "Choose your attack: ";
+        std::cin >> atk;
+        std::cout << player1.get_health() << std::endl;
+        player1.take_damage(40);
+        player1.do_damge(atk);
+        std::cout << player1.get_health() << std::endl;
+        std::cout << player1.get_stamnia() << std::endl;
+        
+        if(player1.get_health() == 0){
+            std::cout << "You loose!!!" << std::endl;
+            game_over = true;
+        }
+        
+    }
+   
+    
+  
     
     
     
