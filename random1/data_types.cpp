@@ -17,6 +17,7 @@
 using namespace std;
 
 bool game_over = false;
+int magic[3][2] = {{20,30},{30,40},{40,60}};
 
 class Player
 {
@@ -24,12 +25,17 @@ private:
     string name;
     int health = 100;
     int stamnia = 130;
-    int attack[3][2] = {{10,5}, {20,10}, {30,20}};
+    int attack[3][2] = {};
     
 public:
   
-    Player(string n){
+    Player(string n, int atk[3][2]){
         name = n;
+        for(int i = 0; i <=2 ; i++){
+            for(int j = 0; j <= 1; j++){
+                attack[i][j] = atk[i][j];
+            };
+        }
     }
     
     int do_damge(int select){
@@ -56,11 +62,15 @@ public:
     {
         return stamnia;
     }
+    
+    void get_attack(){
+        for(int i = 0; i <=2 ; i++){
+            for(int j = 0; j <= 1; j++){
+                std::cout<< "------ " << attack[i][j] << std::endl;
+            };
+        }
+    }
 
-    
-    
-   
-    
     
 };
 int main()
@@ -69,7 +79,8 @@ int main()
     std::cout << "Enter your Player name: ";
     std::cin >> name;
     
-    Player player1(name);
+    Player player1(name,magic);
+    player1.get_attack();
    
     while(!game_over){
         int atk = 0;
