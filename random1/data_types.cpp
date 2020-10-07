@@ -80,21 +80,29 @@ int main()
     std::cin >> name;
     
     Player player1(name,magic);
+    Player player2("Enemy",magic);
     player1.get_attack();
    
     while(!game_over){
         int atk = 0;
         std::cout << "Choose your attack: ";
         std::cin >> atk;
+        
+        int dmg = player1.do_damge(atk);
+        player2.take_damage(dmg);
+        std::cout << "You have attacked Enenmy for "<< dmg << " damage." << std::endl;
+        
+        int take_dmg = player2.do_damge(2);
+        player1.take_damage(take_dmg);
+        std::cout << "Enemy attacks and does "<< take_dmg << " damage." << std::endl;
+        
         std::cout << player1.get_health() << std::endl;
-        player1.take_damage(40);
-        player1.do_damge(atk);
-        std::cout << player1.get_health() << std::endl;
-        std::cout << player1.get_stamnia() << std::endl;
         
         if(player1.get_health() == 0){
             std::cout << "You loose!!!" << std::endl;
             game_over = true;
+        }else if(player2.get_health() == 0){
+            std::cout << "You Win!!!" << std::endl;
         }
         
     }
