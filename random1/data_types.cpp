@@ -13,6 +13,8 @@
 #include "practice.hpp"
 #include <vector>
 #include <sstream>
+#include <fstream>
+#include <iostream>
 
 using namespace std;
 
@@ -70,6 +72,14 @@ public:
             };
         }
     }
+    
+    void write_to_file(){
+        std::ofstream File("/Users/Simon/Desktop/Coding/cpp-exploration/data_test/test.txt");
+        File << name << ", " << health;
+        File.close();
+        std::cout<< "------ " << "File was written!" << std::endl;
+        
+    }
 
     
 };
@@ -100,10 +110,13 @@ int main()
         
         if(player1.get_health() == 0){
             std::cout << "You loose!!!" << std::endl;
+            player1.write_to_file();
             game_over = true;
         }else if(player2.get_health() == 0){
             std::cout << "You Win!!!" << std::endl;
         }
+        
+        
         
     }
    
