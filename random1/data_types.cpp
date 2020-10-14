@@ -81,6 +81,13 @@ public:
         
     }
 
+    void read_file(){
+        std::ifstream file("/Users/Simon/Desktop/Coding/cpp-exploration/data_test/test.txt");
+        std::string str;
+        while (std::getline(file, str)) {
+          std::cout << str << std::endl;
+        }
+    }
     
 };
 int main()
@@ -112,6 +119,7 @@ int main()
             std::cout << "You loose!!!" << std::endl;
             player1.write_to_file();
             game_over = true;
+            player1.read_file();
         }else if(player2.get_health() == 0){
             std::cout << "You Win!!!" << std::endl;
         }
